@@ -24,9 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m1a-n&l)sz&u)9xazx%v1ztzs^+i641yzm@3s4u!c%^o0n%5*2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    '*',
+    'localhost', 
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -80,7 +84,7 @@ WSGI_APPLICATION = 'tourpage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
