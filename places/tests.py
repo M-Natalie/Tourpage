@@ -12,8 +12,8 @@ class PlacesListTestCase(TestCase):
         places = response.context.get('places')
         self.assertIsInstance(places, QuerySet)
         
-        self.assertEqual('Location - 1', places[1].location)
-        self.assertEqual(places[0].description, 'Visit any time')
+        self.assertEqual('Location - 0', places[1].location)
+        self.assertEqual(places[1].description, 'Самое большое озеро в Киргизии')
         
 
 class PlaceCreateTestCase(TestCase):
@@ -25,7 +25,7 @@ class PlaceCreateTestCase(TestCase):
         data = {
             'name': 'Issyk - Kul',
             'location': 'Kara-Kol region',
-            'description': 'Lake in KG'
+            'description': 'Самое большое озеро в Киргизии'
         }
         response = self.client.post(url, data)
         place = Place.objects.last()
