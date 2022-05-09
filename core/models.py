@@ -16,7 +16,10 @@ class Profile(models.Model):
         ('A', 'Batken'),
         
     ))
-    photo = models.ImageField(upload_to='profile_photo', null=True, blank=True)
+    photo = models.ImageField(
+        upload_to='profile_photo', 
+        null=True, blank=True
+    )
     
     def __str__(self):
         return self.user.username 
